@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+
+{% block title %}About - My Website{% endblock %}
+
+{% block content %}
+<style>
+    .about-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 3rem 2rem;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .about-hero h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-hero p {
+        font-size: 1.2rem;
+        opacity: 0.95;
+    }
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .feature-card {
+        background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+        padding: 2rem;
+        border-radius: 12px;
+        border-left: 4px solid #667eea;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(102, 126, 234, 0.2);
+    }
+
+    .feature-card h3 {
+        color: #667eea;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .stats-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .stat-box {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        color: #667eea;
+        font-weight: bold;
+    }
+
+    .stat-label {
+        color: #666;
+        margin-top: 0.5rem;
+    }
+
+    .timeline {
+        position: relative;
+        padding: 2rem 0;
+    }
+
+    .timeline-item {
+        margin-bottom: 2rem;
+        padding-left: 2rem;
+        border-left: 3px solid #667eea;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -8px;
+        width: 16px;
+        height: 16px;
+        background: #667eea;
+        border-radius: 50%;
+        border: 3px solid white;
+    }
+
+    .timeline-item h4 {
+        color: #667eea;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+<div class="about-hero">
+    <h2>🚀 Welcome to Our Journey</h2>
+    <p>Crafting innovative solutions with passion and precision</p>
+</div>
+
+<div class="content-card">
+    <h1>About Our Company</h1>
+    <p>
+        We are a team of dedicated developers and designers committed to building exceptional web experiences.
+        Our passion for technology and innovation drives us to create solutions that make a real difference.
+    </p>
+</div>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>💡 Innovation</h3>
+        <p>We stay ahead of the curve, constantly exploring new technologies and methodologies to deliver cutting-edge solutions.</p>
+    </div>
+    <div class="feature-card">
+        <h3>🎯 Quality</h3>
+        <p>Excellence is our standard. We meticulously craft every pixel and line of code to ensure perfection.</p>
+    </div>
+    <div class="feature-card">
+        <h3>🤝 Collaboration</h3>
+        <p>We believe in the power of teamwork. Our collaborative approach ensures the best ideas come to life.</p>
+    </div>
+    <div class="feature-card">
+        <h3>📈 Growth</h3>
+        <p>Continuous improvement is our philosophy. We learn, adapt, and evolve with every project we undertake.</p>
+    </div>
+</div>
+
+<div class="content-card">
+    <h2 style="color: #667eea; margin-bottom: 1.5rem; font-size: 1.8rem;">Our Achievements</h2>
+    <div class="stats-section">
+        <div class="stat-box">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support Available</div>
+        </div>
+    </div>
+</div>
+
+<div class="content-card">
+    <h2 style="color: #667eea; margin-bottom: 1.5rem; font-size: 1.8rem;">Our Journey</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h4>2019 - Founded</h4>
+            <p>Started our journey with a vision to revolutionize web development and create beautiful digital experiences.</p>
+        </div>
+        <div class="timeline-item">
+            <h4>2020 - First Milestone</h4>
+            <p>Launched our first 10 successful projects and established ourselves as a trusted partner in the industry.</p>
+        </div>
+        <div class="timeline-item">
+            <h4>2022 - Expansion</h4>
+            <p>Grew our team and expanded our services to include full-stack development and modern frameworks.</p>
+        </div>
+        <div class="timeline-item">
+            <h4>2024 - Today</h4>
+            <p>Continuing to innovate and deliver excellence to clients worldwide with our dedicated team.</p>
+        </div>
+    </div>
+</div>
+
+<div class="content-card">
+    <h2 style="color: #667eea; margin-bottom: 1.5rem; font-size: 1.8rem;">Our Tech Stack</h2>
+    <p>Built with cutting-edge technologies:</p>
+    <div class="feature-grid">
+        <div style="border-left: 4px solid #667eea; padding-left: 1.5rem; background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+            <strong style="color: #667eea;">Backend</strong>
+            <p style="margin-top: 0.5rem;">Python • Django • REST APIs</p>
+        </div>
+        <div style="border-left: 4px solid #764ba2; padding-left: 1.5rem; background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+            <strong style="color: #764ba2;">Frontend</strong>
+            <p style="margin-top: 0.5rem;">HTML5 • CSS3 • JavaScript</p>
+        </div>
+        <div style="border-left: 4px solid #667eea; padding-left: 1.5rem; background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+            <strong style="color: #667eea;">Database</strong>
+            <p style="margin-top: 0.5rem;">PostgreSQL • SQLite • MongoDB</p>
+        </div>
+        <div style="border-left: 4px solid #764ba2; padding-left: 1.5rem; background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+            <strong style="color: #764ba2;">Tools</strong>
+            <p style="margin-top: 0.5rem;">Git • Docker • VS Code</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,317 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - My Website{% endblock %}
+
+{% block content %}
+<style>
+    .contact-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 3rem 2rem;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .contact-hero h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .contact-info {
+        background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+        padding: 2rem;
+        border-radius: 12px;
+        border-left: 4px solid #667eea;
+    }
+
+    .contact-info h3 {
+        color: #667eea;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .info-icon {
+        font-size: 1.8rem;
+        margin-right: 1rem;
+        min-width: 30px;
+    }
+
+    .info-content h4 {
+        color: #333;
+        margin-bottom: 0.3rem;
+    }
+
+    .info-content p {
+        color: #666;
+        margin: 0;
+        font-size: 0.95rem;
+    }
+
+    .form-container {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 150px;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    button[type="submit"] {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    button[type="submit"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    button[type="submit"]:active {
+        transform: translateY(0);
+    }
+
+    .success-message {
+        background-color: #d4edda;
+        border: 2px solid #28a745;
+        color: #155724;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .social-links {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 2px solid #eee;
+    }
+
+    .social-links h3 {
+        color: #667eea;
+        margin-bottom: 1rem;
+    }
+
+    .social-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: transform 0.3s;
+    }
+
+    .social-btn:hover {
+        transform: scale(1.1);
+    }
+</style>
+
+<div class="contact-hero">
+    <h2>📬 Get In Touch With Us</h2>
+    <p>We'd love to hear from you. Send us a message anytime!</p>
+</div>
+
+<div class="contact-container">
+    <!-- Contact Information -->
+    <div>
+        <div class="contact-info">
+            <h3>📍 Contact Information</h3>
+            
+            <div class="info-item">
+                <div class="info-icon">📧</div>
+                <div class="info-content">
+                    <h4>Email</h4>
+                    <p>info@example.com</p>
+                    <p style="font-size: 0.85rem; color: #999;">support@example.com</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📞</div>
+                <div class="info-content">
+                    <h4>Phone</h4>
+                    <p>+1 (555) 123-4567</p>
+                    <p style="font-size: 0.85rem; color: #999;">Mon-Fri 9AM-6PM EST</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div class="info-content">
+                    <h4>Address</h4>
+                    <p>123 Tech Street</p>
+                    <p style="font-size: 0.85rem; color: #999;">San Francisco, CA 94105</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">⏰</div>
+                <div class="info-content">
+                    <h4>Business Hours</h4>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p style="font-size: 0.85rem; color: #999;">Weekend: Closed</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h3>Follow Us</h3>
+                <div class="social-buttons">
+                    <a href="#" class="social-btn" title="Facebook">👤</a>
+                    <a href="#" class="social-btn" title="Twitter">𝕏</a>
+                    <a href="#" class="social-btn" title="LinkedIn">💼</a>
+                    <a href="#" class="social-btn" title="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div>
+        <div class="form-container">
+            <h3 style="color: #667eea; margin-bottom: 1.5rem;">Send us a Message</h3>
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="success-message">
+                        ✅ {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email *</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Please share your message, questions, or feedback here..." required></textarea>
+                </div>
+
+                <button type="submit">✉️ Send Message</button>
+            </form>
+
+            <p style="text-align: center; color: #999; margin-top: 1rem; font-size: 0.9rem;">
+                We'll get back to you within 24 hours
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
